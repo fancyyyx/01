@@ -1,0 +1,68 @@
+package GUI;
+import java.awt.*;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;;
+
+
+class MyWindowListenter implements WindowListener {
+
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        Window window =e.getWindow();
+        window.setVisible(false);
+        window.dispose();
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
+    }
+}
+public class Borderlayout {
+    public static void main(String[] args) {
+        Frame f = new Frame("BorderLayout");
+        f.setLayout(new BorderLayout());
+        f.setSize(500, 500);
+        f.setLocation(400, 400);
+        f.setVisible(true);
+
+        Button but1 = new Button("东方");
+        Button but2 = new Button("南方");
+        Button but3 = new Button("西方");
+        Button but4 = new Button("北方");
+        Button but5 = new Button("中间");
+
+        f.add(but1, BorderLayout.EAST);
+        f.add(but2, BorderLayout.SOUTH);
+        f.add(but3, BorderLayout.WEST);
+        f.add(but4, BorderLayout.NORTH);
+        f.add(but5, BorderLayout.CENTER);
+        f.addWindowListener( new MyWindowListenter());
+    }
+}
